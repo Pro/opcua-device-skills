@@ -1,0 +1,34 @@
+workspace:
+  base: /model
+  path: src
+
+pipeline:
+  fortiss-di:
+    image: sailavid/ua-modelcompiler
+    commands:
+      - cd /app
+      - /app/PublishModel.sh /model/src/fortiss_di/fortissDiModel fortiss_di /model/src/Published
+  fortiss-robotics:
+    image: sailavid/ua-modelcompiler
+    commands:
+      - cd /app
+      - /app/PublishModel.sh /model/src/fortiss_robotics/fortissRoboticsModel fortiss_robotics /model/src/Published
+  kuka-iiwa:
+    image: sailavid/ua-modelcompiler
+    commands:
+      - cd /app
+      - /app/PublishModel.sh /model/src/kuka_iiwa/kukaIiwaModel kuka_iiwa /model/src/Published
+      -
+  git_push:
+    image: appleboy/drone-git-push
+    pull: true
+    secrets: [ git_push_ssh_key ]
+    remote: git@github.com:Pro/opcua-device-skills.git
+    branch: ${DRONE_COMMIT_BRANCH}-published
+    commit: true
+    force: true
+    commit_message: "[skip ci] Deploy from drone.io"
+    author_name: Drone.io
+    author_email: bot@drone.io
+    when:
+      event: [ push ]
