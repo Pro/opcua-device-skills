@@ -26,6 +26,10 @@ https://github.com/Pro/opcua-device-skills/tree/master-published/Published
 If you like to manually build the files on your machine, follow these steps:
 (as executed by the automatic build in the [.drone.yml](https://github.com/Pro/opcua-device-skills/blob/master/.drone.yml) file)
 
+This build process is using a pre-built docker container based on the official UA-ModelCompiler source code.
+There's currently an open pull-request (https://github.com/OPCFoundation/UA-ModelCompiler/pull/36) to add the necessary docker files to the official repository. In the meantime you can use my docker container:
+[sailavid/ua-modelcompiler](https://cloud.docker.com/u/sailavid/repository/docker/sailavid/ua-modelcompiler).
+
 1. Install docker on your machine
 2. Clone this repository
 3. `cd opcua-device-skills`
