@@ -14,6 +14,20 @@ in Proceedings of the IEEE International Conference on Emerging Technologies And
 
 The full-text PDF is available here: https://mediatum.ub.tum.de/1507596
 
+
+## Will this model be supported by the OPC Foundation?
+
+There's currently an official VDMA and OPC Foundation joint working group for a skill concept which can be used inside OPC UA.
+
+[Service-Oriented Architectures and real-time Control (SOArc)](https://www.th-owl.de/init/aktuelles/news/news-detail/news/kick-off-meeting-vdma-arbeitsgruppe-service-orientierte-architekturen-und-real-time-control-soarc.html)
+
+We as fortiss are involved in that joint working group with the goal to publish an easy-to-use skill model for any system components.
+
+This repository is a first draft of a possible skill model, which acts as a basis for further improvement inside the working group.
+
+Therefore we are happy for any feedback. Just create a new issue inside this repository, or contact me directly:
+https://www.fortiss.org/en/about-us/people/stefan-profanter/
+
 ## How to use
 
 The `master` branch only contains the `*Model.xml` files, not the compiled NodeSet2.xml files.
