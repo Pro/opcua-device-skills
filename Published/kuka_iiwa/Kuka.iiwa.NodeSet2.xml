@@ -1,0 +1,2761 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UANodeSet xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" LastModified="2018-06-24T00:00:00Z" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd">
+  <NamespaceUris>
+    <Uri>https://fortiss.org/UA/kuka_iiwa/</Uri>
+    <Uri>http://opcfoundation.org/UA/DI/</Uri>
+    <Uri>http://opcfoundation.org/UA/Robotics/</Uri>
+    <Uri>https://fortiss.org/UA/Robotics/</Uri>
+    <Uri>https://fortiss.org/UA/DI/</Uri>
+  </NamespaceUris>
+  <Models>
+    <Model ModelUri="https://fortiss.org/UA/kuka_iiwa/" Version="0.9.0" PublicationDate="2018-06-24T00:00:00Z">
+      <RequiredModel ModelUri="http://opcfoundation.org/UA/" Version="1.03" PublicationDate="2013-12-02T00:00:00Z" />
+      <RequiredModel ModelUri="http://opcfoundation.org/UA/Robotics/" Version="1.0.0" PublicationDate="2019-05-06T00:00:00Z" />
+      <RequiredModel ModelUri="https://fortiss.org/UA/Robotics/" Version="0.9.1" PublicationDate="2018-06-24T00:00:00Z" />
+    </Model>
+  </Models>
+  <Aliases>
+    <Alias Alias="Boolean">i=1</Alias>
+    <Alias Alias="SByte">i=2</Alias>
+    <Alias Alias="Byte">i=3</Alias>
+    <Alias Alias="Int16">i=4</Alias>
+    <Alias Alias="UInt16">i=5</Alias>
+    <Alias Alias="Int32">i=6</Alias>
+    <Alias Alias="UInt32">i=7</Alias>
+    <Alias Alias="Int64">i=8</Alias>
+    <Alias Alias="UInt64">i=9</Alias>
+    <Alias Alias="Float">i=10</Alias>
+    <Alias Alias="Double">i=11</Alias>
+    <Alias Alias="DateTime">i=13</Alias>
+    <Alias Alias="String">i=12</Alias>
+    <Alias Alias="ByteString">i=15</Alias>
+    <Alias Alias="Guid">i=14</Alias>
+    <Alias Alias="XmlElement">i=16</Alias>
+    <Alias Alias="NodeId">i=17</Alias>
+    <Alias Alias="ExpandedNodeId">i=18</Alias>
+    <Alias Alias="QualifiedName">i=20</Alias>
+    <Alias Alias="LocalizedText">i=21</Alias>
+    <Alias Alias="StatusCode">i=19</Alias>
+    <Alias Alias="Structure">i=22</Alias>
+    <Alias Alias="Number">i=26</Alias>
+    <Alias Alias="Integer">i=27</Alias>
+    <Alias Alias="UInteger">i=28</Alias>
+    <Alias Alias="HasComponent">i=47</Alias>
+    <Alias Alias="HasProperty">i=46</Alias>
+    <Alias Alias="Organizes">i=35</Alias>
+    <Alias Alias="HasEventSource">i=36</Alias>
+    <Alias Alias="HasNotifier">i=48</Alias>
+    <Alias Alias="HasSubtype">i=45</Alias>
+    <Alias Alias="HasTypeDefinition">i=40</Alias>
+    <Alias Alias="HasModellingRule">i=37</Alias>
+    <Alias Alias="HasEncoding">i=38</Alias>
+    <Alias Alias="HasDescription">i=39</Alias>
+  </Aliases>
+  <UAObject NodeId="ns=1;i=15001" BrowseName="1:IiwaMotionSystem" EventNotifier="1">
+    <DisplayName>IiwaMotionSystem</DisplayName>
+    <Description>The Iiwa Robot</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15038</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15257</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15440</Reference>
+      <Reference ReferenceType="Organizes" IsForward="false">ns=2;i=5001</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=3;i=1002</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=15038" BrowseName="3:MotionDevices" ParentNodeId="ns=1;i=15001">
+    <DisplayName>MotionDevices</DisplayName>
+    <Description>Contains any kinematic or motion device which is part of the motion device system.</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15488</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15001</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=15488" BrowseName="1:Iiwa Robot" SymbolicName="IiwaRobot" ParentNodeId="ns=1;i=15038">
+    <DisplayName>Iiwa Robot</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15489</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=15509</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=15511</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=15515</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=15518</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=15523</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15527</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15608</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15644</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15706</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15708</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15710</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16296</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16310</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16427</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=4;i=15768</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15038</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=15489" BrowseName="2:ParameterSet" ParentNodeId="ns=1;i=15488">
+    <DisplayName>ParameterSet</DisplayName>
+    <Description>Flat list of Parameters</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15526</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15488</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15526" BrowseName="3:SpeedOverride" ParentNodeId="ns=1;i=15489" DataType="Double">
+    <DisplayName>SpeedOverride</DisplayName>
+    <Description>SpeedOverride provides the current speed setting in percent of programmed speed (0 - 100%).</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15489</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15509" BrowseName="2:Manufacturer" ParentNodeId="ns=1;i=15488" DataType="LocalizedText">
+    <DisplayName>Manufacturer</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15488</Reference>
+    </References>
+    <Value>
+      <LocalizedText xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+        <Locale>
+        </Locale>
+        <Text>KUKA</Text>
+      </LocalizedText>
+    </Value>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15511" BrowseName="2:Model" ParentNodeId="ns=1;i=15488" DataType="LocalizedText">
+    <DisplayName>Model</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15488</Reference>
+    </References>
+    <Value>
+      <LocalizedText xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+        <Locale>
+        </Locale>
+        <Text>iiwa</Text>
+      </LocalizedText>
+    </Value>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15515" BrowseName="2:ProductCode" ParentNodeId="ns=1;i=15488" DataType="String">
+    <DisplayName>ProductCode</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15488</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15518" BrowseName="2:SerialNumber" ParentNodeId="ns=1;i=15488" DataType="String">
+    <DisplayName>SerialNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15488</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15523" BrowseName="3:MotionDeviceCategory" ParentNodeId="ns=1;i=15488" DataType="ns=3;i=18193">
+    <DisplayName>MotionDeviceCategory</DisplayName>
+    <Description>The variable MotionDeviceCategory provides the kind of motion device defined by MotionDeviceCategoryEnumeration based on ISO 8373.</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15488</Reference>
+    </References>
+    <Value>
+      <UInt16 xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">1</UInt16>
+    </Value>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15527" BrowseName="3:Axes" ParentNodeId="ns=1;i=15488">
+    <DisplayName>Axes</DisplayName>
+    <Description>Contains the axis set of the motion device.</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15729</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15810</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15891</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15972</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16053</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16134</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16215</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15488</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=15729" BrowseName="3:Axis_1" ParentNodeId="ns=1;i=15527">
+    <DisplayName>Axis_1</DisplayName>
+    <Description>The bottom-most axis</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15730</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=15764</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=15809</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=3;i=16601</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15527</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=15730" BrowseName="2:ParameterSet" ParentNodeId="ns=1;i=15729">
+    <DisplayName>ParameterSet</DisplayName>
+    <Description>Flat list of Parameters</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15791</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15797</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15729</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15791" BrowseName="3:ActualPosition" ParentNodeId="ns=1;i=15730" DataType="Double">
+    <DisplayName>ActualPosition</DisplayName>
+    <Description>The axis position inclusive Unit and RangeOfMotion.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=15796</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=17497</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15730</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15796" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=15791" DataType="i=887">
+    <DisplayName>EngineeringUnits</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15791</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15797" BrowseName="3:ActualSpeed" ParentNodeId="ns=1;i=15730" DataType="Double">
+    <DisplayName>ActualSpeed</DisplayName>
+    <Description>The axis speed on load side (after gear/spindle) inclusive Unit.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=15802</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=17497</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15730</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15802" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=15797" DataType="i=887">
+    <DisplayName>EngineeringUnits</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15797</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15764" BrowseName="3:MotionProfile" ParentNodeId="ns=1;i=15729" DataType="ns=3;i=3008">
+    <DisplayName>MotionProfile</DisplayName>
+    <Description>The kind of axis motion as defined with the AxisMotionProfileEnumeration.</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15729</Reference>
+    </References>
+    <Value>
+      <UInt16 xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">1</UInt16>
+    </Value>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15809" BrowseName="3:Name" ParentNodeId="ns=1;i=15729" DataType="String">
+    <DisplayName>Name</DisplayName>
+    <Description>Joint0</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15729</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15810" BrowseName="3:Axis_2" ParentNodeId="ns=1;i=15527">
+    <DisplayName>Axis_2</DisplayName>
+    <Description>The second axis</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15811</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=15845</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=15890</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=3;i=16601</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15527</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=15811" BrowseName="2:ParameterSet" ParentNodeId="ns=1;i=15810">
+    <DisplayName>ParameterSet</DisplayName>
+    <Description>Flat list of Parameters</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15872</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15878</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15810</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15872" BrowseName="3:ActualPosition" ParentNodeId="ns=1;i=15811" DataType="Double">
+    <DisplayName>ActualPosition</DisplayName>
+    <Description>The axis position inclusive Unit and RangeOfMotion.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=15877</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=17497</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15811</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15877" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=15872" DataType="i=887">
+    <DisplayName>EngineeringUnits</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15872</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15878" BrowseName="3:ActualSpeed" ParentNodeId="ns=1;i=15811" DataType="Double">
+    <DisplayName>ActualSpeed</DisplayName>
+    <Description>The axis speed on load side (after gear/spindle) inclusive Unit.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=15883</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=17497</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15811</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15883" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=15878" DataType="i=887">
+    <DisplayName>EngineeringUnits</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15878</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15845" BrowseName="3:MotionProfile" ParentNodeId="ns=1;i=15810" DataType="ns=3;i=3008">
+    <DisplayName>MotionProfile</DisplayName>
+    <Description>The kind of axis motion as defined with the AxisMotionProfileEnumeration.</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15810</Reference>
+    </References>
+    <Value>
+      <UInt16 xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">1</UInt16>
+    </Value>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15890" BrowseName="3:Name" ParentNodeId="ns=1;i=15810" DataType="String">
+    <DisplayName>Name</DisplayName>
+    <Description>Joint1</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15810</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15891" BrowseName="3:Axis_3" ParentNodeId="ns=1;i=15527">
+    <DisplayName>Axis_3</DisplayName>
+    <Description>The third axis</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15892</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=15926</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=15971</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=3;i=16601</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15527</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=15892" BrowseName="2:ParameterSet" ParentNodeId="ns=1;i=15891">
+    <DisplayName>ParameterSet</DisplayName>
+    <Description>Flat list of Parameters</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15953</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15959</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15891</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15953" BrowseName="3:ActualPosition" ParentNodeId="ns=1;i=15892" DataType="Double">
+    <DisplayName>ActualPosition</DisplayName>
+    <Description>The axis position inclusive Unit and RangeOfMotion.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=15958</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=17497</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15892</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15958" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=15953" DataType="i=887">
+    <DisplayName>EngineeringUnits</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15953</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15959" BrowseName="3:ActualSpeed" ParentNodeId="ns=1;i=15892" DataType="Double">
+    <DisplayName>ActualSpeed</DisplayName>
+    <Description>The axis speed on load side (after gear/spindle) inclusive Unit.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=15964</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=17497</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15892</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15964" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=15959" DataType="i=887">
+    <DisplayName>EngineeringUnits</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15959</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15926" BrowseName="3:MotionProfile" ParentNodeId="ns=1;i=15891" DataType="ns=3;i=3008">
+    <DisplayName>MotionProfile</DisplayName>
+    <Description>The kind of axis motion as defined with the AxisMotionProfileEnumeration.</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15891</Reference>
+    </References>
+    <Value>
+      <UInt16 xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">1</UInt16>
+    </Value>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15971" BrowseName="3:Name" ParentNodeId="ns=1;i=15891" DataType="String">
+    <DisplayName>Name</DisplayName>
+    <Description>Joint2</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15891</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15972" BrowseName="3:Axis_4" ParentNodeId="ns=1;i=15527">
+    <DisplayName>Axis_4</DisplayName>
+    <Description>The fourth axis</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15973</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16007</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16052</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=3;i=16601</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15527</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=15973" BrowseName="2:ParameterSet" ParentNodeId="ns=1;i=15972">
+    <DisplayName>ParameterSet</DisplayName>
+    <Description>Flat list of Parameters</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16034</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16040</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15972</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16034" BrowseName="3:ActualPosition" ParentNodeId="ns=1;i=15973" DataType="Double">
+    <DisplayName>ActualPosition</DisplayName>
+    <Description>The axis position inclusive Unit and RangeOfMotion.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16039</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=17497</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15973</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16039" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=16034" DataType="i=887">
+    <DisplayName>EngineeringUnits</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16034</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16040" BrowseName="3:ActualSpeed" ParentNodeId="ns=1;i=15973" DataType="Double">
+    <DisplayName>ActualSpeed</DisplayName>
+    <Description>The axis speed on load side (after gear/spindle) inclusive Unit.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16045</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=17497</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15973</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16045" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=16040" DataType="i=887">
+    <DisplayName>EngineeringUnits</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16040</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16007" BrowseName="3:MotionProfile" ParentNodeId="ns=1;i=15972" DataType="ns=3;i=3008">
+    <DisplayName>MotionProfile</DisplayName>
+    <Description>The kind of axis motion as defined with the AxisMotionProfileEnumeration.</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15972</Reference>
+    </References>
+    <Value>
+      <UInt16 xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">1</UInt16>
+    </Value>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16052" BrowseName="3:Name" ParentNodeId="ns=1;i=15972" DataType="String">
+    <DisplayName>Name</DisplayName>
+    <Description>Joint3</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15972</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16053" BrowseName="3:Axis_5" ParentNodeId="ns=1;i=15527">
+    <DisplayName>Axis_5</DisplayName>
+    <Description>The fifth axis</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16054</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16088</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16133</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=3;i=16601</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15527</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=16054" BrowseName="2:ParameterSet" ParentNodeId="ns=1;i=16053">
+    <DisplayName>ParameterSet</DisplayName>
+    <Description>Flat list of Parameters</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16115</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16121</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16053</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16115" BrowseName="3:ActualPosition" ParentNodeId="ns=1;i=16054" DataType="Double">
+    <DisplayName>ActualPosition</DisplayName>
+    <Description>The axis position inclusive Unit and RangeOfMotion.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16120</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=17497</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16054</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16120" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=16115" DataType="i=887">
+    <DisplayName>EngineeringUnits</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16115</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16121" BrowseName="3:ActualSpeed" ParentNodeId="ns=1;i=16054" DataType="Double">
+    <DisplayName>ActualSpeed</DisplayName>
+    <Description>The axis speed on load side (after gear/spindle) inclusive Unit.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16126</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=17497</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16054</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16126" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=16121" DataType="i=887">
+    <DisplayName>EngineeringUnits</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16121</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16088" BrowseName="3:MotionProfile" ParentNodeId="ns=1;i=16053" DataType="ns=3;i=3008">
+    <DisplayName>MotionProfile</DisplayName>
+    <Description>The kind of axis motion as defined with the AxisMotionProfileEnumeration.</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16053</Reference>
+    </References>
+    <Value>
+      <UInt16 xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">1</UInt16>
+    </Value>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16133" BrowseName="3:Name" ParentNodeId="ns=1;i=16053" DataType="String">
+    <DisplayName>Name</DisplayName>
+    <Description>Joint4</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16053</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16134" BrowseName="3:Axis_6" ParentNodeId="ns=1;i=15527">
+    <DisplayName>Axis_6</DisplayName>
+    <Description>The sixth axis</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16135</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16169</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16214</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=3;i=16601</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15527</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=16135" BrowseName="2:ParameterSet" ParentNodeId="ns=1;i=16134">
+    <DisplayName>ParameterSet</DisplayName>
+    <Description>Flat list of Parameters</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16196</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16202</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16134</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16196" BrowseName="3:ActualPosition" ParentNodeId="ns=1;i=16135" DataType="Double">
+    <DisplayName>ActualPosition</DisplayName>
+    <Description>The axis position inclusive Unit and RangeOfMotion.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16201</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=17497</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16135</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16201" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=16196" DataType="i=887">
+    <DisplayName>EngineeringUnits</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16196</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16202" BrowseName="3:ActualSpeed" ParentNodeId="ns=1;i=16135" DataType="Double">
+    <DisplayName>ActualSpeed</DisplayName>
+    <Description>The axis speed on load side (after gear/spindle) inclusive Unit.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16207</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=17497</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16135</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16207" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=16202" DataType="i=887">
+    <DisplayName>EngineeringUnits</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16202</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16169" BrowseName="3:MotionProfile" ParentNodeId="ns=1;i=16134" DataType="ns=3;i=3008">
+    <DisplayName>MotionProfile</DisplayName>
+    <Description>The kind of axis motion as defined with the AxisMotionProfileEnumeration.</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16134</Reference>
+    </References>
+    <Value>
+      <UInt16 xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">1</UInt16>
+    </Value>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16214" BrowseName="3:Name" ParentNodeId="ns=1;i=16134" DataType="String">
+    <DisplayName>Name</DisplayName>
+    <Description>Joint5</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16134</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16215" BrowseName="3:Axis_7" ParentNodeId="ns=1;i=15527">
+    <DisplayName>Axis_7</DisplayName>
+    <Description>The last axis</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16216</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16250</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16295</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=3;i=16601</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15527</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=16216" BrowseName="2:ParameterSet" ParentNodeId="ns=1;i=16215">
+    <DisplayName>ParameterSet</DisplayName>
+    <Description>Flat list of Parameters</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16277</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16283</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16215</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16277" BrowseName="3:ActualPosition" ParentNodeId="ns=1;i=16216" DataType="Double">
+    <DisplayName>ActualPosition</DisplayName>
+    <Description>The axis position inclusive Unit and RangeOfMotion.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16282</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=17497</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16216</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16282" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=16277" DataType="i=887">
+    <DisplayName>EngineeringUnits</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16277</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16283" BrowseName="3:ActualSpeed" ParentNodeId="ns=1;i=16216" DataType="Double">
+    <DisplayName>ActualSpeed</DisplayName>
+    <Description>The axis speed on load side (after gear/spindle) inclusive Unit.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16288</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=17497</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16216</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16288" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=16283" DataType="i=887">
+    <DisplayName>EngineeringUnits</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16283</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16250" BrowseName="3:MotionProfile" ParentNodeId="ns=1;i=16215" DataType="ns=3;i=3008">
+    <DisplayName>MotionProfile</DisplayName>
+    <Description>The kind of axis motion as defined with the AxisMotionProfileEnumeration.</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16215</Reference>
+    </References>
+    <Value>
+      <UInt16 xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">1</UInt16>
+    </Value>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16295" BrowseName="3:Name" ParentNodeId="ns=1;i=16215" DataType="String">
+    <DisplayName>Name</DisplayName>
+    <Description>Joint6</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16215</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15608" BrowseName="3:PowerTrains" ParentNodeId="ns=1;i=15488">
+    <DisplayName>PowerTrains</DisplayName>
+    <Description>PowerTrains is a container for one or more instances of the PowerTrainType.</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15488</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=15644" BrowseName="3:FlangeLoad" ParentNodeId="ns=1;i=15488">
+    <DisplayName>FlangeLoad</DisplayName>
+    <Description>The FlangeLoad is the load on the flange or at the mounting point of the
+          MotionDevice.\nThis can be the maximum load of the MotionDevice.</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15645</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=3;i=1018</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15488</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15645" BrowseName="3:Mass" ParentNodeId="ns=1;i=15644" DataType="Double">
+    <DisplayName>Mass</DisplayName>
+    <Description>The weight of the load mounted on one mounting point.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=15650</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=17497</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15644</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15650" BrowseName="EngineeringUnits" ParentNodeId="ns=1;i=15645" DataType="i=887">
+    <DisplayName>EngineeringUnits</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15645</Reference>
+    </References>
+  </UAVariable>
+  <UAMethod NodeId="ns=1;i=15706" BrowseName="4:FlangeToolSet" ParentNodeId="ns=1;i=15488" MethodDeclarationId="ns=4;i=15988">
+    <DisplayName>FlangeToolSet</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=15707</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15488</Reference>
+    </References>
+  </UAMethod>
+  <UAVariable NodeId="ns=1;i=15707" BrowseName="InputArguments" ParentNodeId="ns=1;i=15706" DataType="i=296" ValueRank="1" ArrayDimensions="0">
+    <DisplayName>InputArguments</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15706</Reference>
+    </References>
+    <Value>
+      <ListOfExtensionObject xmlns="http://opcfoundation.org/UA/2008/02/Types.xsd">
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>Name</Name>
+              <DataType>
+                <Identifier>i=12</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+            </Argument>
+          </Body>
+        </ExtensionObject>
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>Frame</Name>
+              <DataType>
+                <Identifier>i=18814</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+            </Argument>
+          </Body>
+        </ExtensionObject>
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>Mass</Name>
+              <DataType>
+                <Identifier>i=11</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+            </Argument>
+          </Body>
+        </ExtensionObject>
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>CenterOfMass</Name>
+              <DataType>
+                <Identifier>i=18814</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+            </Argument>
+          </Body>
+        </ExtensionObject>
+        <ExtensionObject>
+          <TypeId>
+            <Identifier>i=297</Identifier>
+          </TypeId>
+          <Body>
+            <Argument>
+              <Name>Inertia</Name>
+              <DataType>
+                <Identifier>i=18808</Identifier>
+              </DataType>
+              <ValueRank>-1</ValueRank>
+              <ArrayDimensions />
+            </Argument>
+          </Body>
+        </ExtensionObject>
+      </ListOfExtensionObject>
+    </Value>
+  </UAVariable>
+  <UAMethod NodeId="ns=1;i=15708" BrowseName="4:FlangeToolClear" ParentNodeId="ns=1;i=15488" MethodDeclarationId="ns=4;i=15990">
+    <DisplayName>FlangeToolClear</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15488</Reference>
+    </References>
+  </UAMethod>
+  <UAObject NodeId="ns=1;i=15710" BrowseName="4:FlangeTool" ParentNodeId="ns=1;i=15488">
+    <DisplayName>FlangeTool</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=15711</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15712</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15488</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=15711" BrowseName="3:Name" ParentNodeId="ns=1;i=15710" DataType="String">
+    <DisplayName>Name</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=15710</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15712" BrowseName="3DFrame" SymbolicName="ThreeDFrame" ParentNodeId="ns=1;i=15710" DataType="i=18814">
+    <DisplayName>3DFrame</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15713</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15715</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=18791</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15710</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15713" BrowseName="CartesianCoordinates" ParentNodeId="ns=1;i=15712" DataType="i=18810">
+    <DisplayName>CartesianCoordinates</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15720</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15721</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15722</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=18774</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15712</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15720" BrowseName="X" ParentNodeId="ns=1;i=15713" DataType="Double">
+    <DisplayName>X</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15713</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15721" BrowseName="Y" ParentNodeId="ns=1;i=15713" DataType="Double">
+    <DisplayName>Y</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15713</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15722" BrowseName="Z" ParentNodeId="ns=1;i=15713" DataType="Double">
+    <DisplayName>Z</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15713</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15715" BrowseName="Orientation" ParentNodeId="ns=1;i=15712" DataType="i=18812">
+    <DisplayName>Orientation</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=15723</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15724</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=15725</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=18781</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15712</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15723" BrowseName="A" ParentNodeId="ns=1;i=15715" DataType="Double">
+    <DisplayName>A</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15715</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15724" BrowseName="B" ParentNodeId="ns=1;i=15715" DataType="Double">
+    <DisplayName>B</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15715</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=15725" BrowseName="C" ParentNodeId="ns=1;i=15715" DataType="Double">
+    <DisplayName>C</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15715</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16296" BrowseName="1:Position" ParentNodeId="ns=1;i=15488" DataType="i=18814">
+    <DisplayName>Position</DisplayName>
+    <Description>The cartesian location of the robot</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16297</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16299</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=18791</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15488</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16297" BrowseName="CartesianCoordinates" ParentNodeId="ns=1;i=16296" DataType="i=18810">
+    <DisplayName>CartesianCoordinates</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16304</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16305</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16306</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=18774</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16296</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16304" BrowseName="X" ParentNodeId="ns=1;i=16297" DataType="Double">
+    <DisplayName>X</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16297</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16305" BrowseName="Y" ParentNodeId="ns=1;i=16297" DataType="Double">
+    <DisplayName>Y</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16297</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16306" BrowseName="Z" ParentNodeId="ns=1;i=16297" DataType="Double">
+    <DisplayName>Z</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16297</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16299" BrowseName="Orientation" ParentNodeId="ns=1;i=16296" DataType="i=18812">
+    <DisplayName>Orientation</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16307</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16308</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16309</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=18781</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16296</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16307" BrowseName="A" ParentNodeId="ns=1;i=16299" DataType="Double">
+    <DisplayName>A</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16299</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16308" BrowseName="B" ParentNodeId="ns=1;i=16299" DataType="Double">
+    <DisplayName>B</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16299</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16309" BrowseName="C" ParentNodeId="ns=1;i=16299" DataType="Double">
+    <DisplayName>C</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16299</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16310" BrowseName="1:ForceTorqueSensors" ParentNodeId="ns=1;i=15488">
+    <DisplayName>ForceTorqueSensors</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16345</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16386</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=5;i=15728</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15488</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=16345" BrowseName="5:ForceSensor" ParentNodeId="ns=1;i=16310">
+    <DisplayName>ForceSensor</DisplayName>
+    <Description>Offers information about force experienced by the robot</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16380</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=5;i=15692</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16310</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16380" BrowseName="5:Force" ParentNodeId="ns=1;i=16345" DataType="Double" ValueRank="1" ArrayDimensions="0" AccessLevel="3">
+    <DisplayName>Force</DisplayName>
+    <Description>The current forces in X Y and Z in N</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16384</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2368</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16345</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16384" BrowseName="EURange" ParentNodeId="ns=1;i=16380" DataType="i=884">
+    <DisplayName>EURange</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16380</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16386" BrowseName="5:TorqueSensor" ParentNodeId="ns=1;i=16310">
+    <DisplayName>TorqueSensor</DisplayName>
+    <Description>Offers information about torque experienced by the sensor</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16421</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=5;i=15692</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16310</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16421" BrowseName="5:Torque" ParentNodeId="ns=1;i=16386" DataType="Double" ValueRank="1" ArrayDimensions="0" AccessLevel="3">
+    <DisplayName>Torque</DisplayName>
+    <Description>The torque in X Y and Z in Nm</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16425</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2368</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16386</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16425" BrowseName="EURange" ParentNodeId="ns=1;i=16421" DataType="i=884">
+    <DisplayName>EURange</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16421</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16427" BrowseName="1:Led" ParentNodeId="ns=1;i=15488" DataType="Boolean" AccessLevel="3">
+    <DisplayName>Led</DisplayName>
+    <Description>Status of the blue LED at the robots TCP</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15488</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15257" BrowseName="3:Controllers" ParentNodeId="ns=1;i=15001">
+    <DisplayName>Controllers</DisplayName>
+    <Description>Contains the set of controllers in the motion device system.</Description>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16428</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15001</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=16428" BrowseName="1:Iiwa Controller" SymbolicName="IiwaController" ParentNodeId="ns=1;i=15257">
+    <DisplayName>Iiwa Controller</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16449</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16451</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16455</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16458</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16463</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16502</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16538</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16610</Reference>
+      <Reference ReferenceType="i=17603">ns=5;i=15396</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=3;i=1003</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15257</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16449" BrowseName="2:Manufacturer" ParentNodeId="ns=1;i=16428" DataType="LocalizedText">
+    <DisplayName>Manufacturer</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16428</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16451" BrowseName="2:Model" ParentNodeId="ns=1;i=16428" DataType="LocalizedText">
+    <DisplayName>Model</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16428</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16455" BrowseName="2:ProductCode" ParentNodeId="ns=1;i=16428" DataType="String">
+    <DisplayName>ProductCode</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16428</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16458" BrowseName="2:SerialNumber" ParentNodeId="ns=1;i=16428" DataType="String">
+    <DisplayName>SerialNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16428</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16463" BrowseName="3:CurrentUser" ParentNodeId="ns=1;i=16428">
+    <DisplayName>CurrentUser</DisplayName>
+    <Description>The given name of the device.</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16464</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=3;i=18175</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16428</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16464" BrowseName="3:Level" ParentNodeId="ns=1;i=16463" DataType="String">
+    <DisplayName>Level</DisplayName>
+    <Description>The weight of the load mounted on one mounting point.</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16463</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16502" BrowseName="3:Software" ParentNodeId="ns=1;i=16428">
+    <DisplayName>Software</DisplayName>
+    <Description>Software is a container for one or more instances of SoftwareType defined in OPC UA DI.</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16428</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=16538" BrowseName="3:TaskControls" ParentNodeId="ns=1;i=16428">
+    <DisplayName>TaskControls</DisplayName>
+    <Description>TaskControls is a container for one or more instances of TaskControlType.</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16428</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=16610" BrowseName="5:Skills" ParentNodeId="ns=1;i=16428">
+    <DisplayName>Skills</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16611</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16689</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16767</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16845</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16428</Reference>
+    </References>
+  </UAObject>
+  <UAObject NodeId="ns=1;i=16611" BrowseName="1:JointLinearMoveSkill" ParentNodeId="ns=1;i=16610">
+    <DisplayName>JointLinearMoveSkill</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16612</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16617</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16625</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16626</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16627</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16642</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16643</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16644</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16646</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16648</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16650</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16652</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16654</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16656</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16658</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16660</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16662</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16664</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16666</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16668</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16670</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16671</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16672</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16673</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16674</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16675</Reference>
+      <Reference ReferenceType="i=17603">ns=4;i=15287</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=4;i=15376</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16610</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16612" BrowseName="CurrentState" ParentNodeId="ns=1;i=16611" DataType="LocalizedText">
+    <DisplayName>CurrentState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16613</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16615</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2760</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16613" BrowseName="Id" ParentNodeId="ns=1;i=16612" DataType="NodeId">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16612</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16615" BrowseName="Number" ParentNodeId="ns=1;i=16612" DataType="UInt32">
+    <DisplayName>Number</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16612</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16617" BrowseName="LastTransition" ParentNodeId="ns=1;i=16611" DataType="LocalizedText">
+    <DisplayName>LastTransition</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16618</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16620</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16621</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2767</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16618" BrowseName="Id" ParentNodeId="ns=1;i=16617" DataType="NodeId">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16617</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16620" BrowseName="Number" ParentNodeId="ns=1;i=16617" DataType="UInt32">
+    <DisplayName>Number</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16617</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16621" BrowseName="TransitionTime" ParentNodeId="ns=1;i=16617" DataType="i=294">
+    <DisplayName>TransitionTime</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16617</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16625" BrowseName="Deletable" ParentNodeId="ns=1;i=16611" DataType="Boolean">
+    <DisplayName>Deletable</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16626" BrowseName="AutoDelete" ParentNodeId="ns=1;i=16611" DataType="Boolean">
+    <DisplayName>AutoDelete</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16627" BrowseName="RecycleCount" ParentNodeId="ns=1;i=16611" DataType="Int32">
+    <DisplayName>RecycleCount</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16642" BrowseName="5:Name" ParentNodeId="ns=1;i=16611" DataType="String">
+    <DisplayName>Name</DisplayName>
+    <Description>Name of the skill</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16643" BrowseName="MaxInstanceCount" ParentNodeId="ns=1;i=16611" DataType="UInt32">
+    <DisplayName>MaxInstanceCount</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16644" BrowseName="Halted" ParentNodeId="ns=1;i=16611">
+    <DisplayName>Halted</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16645</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16645" BrowseName="StateNumber" ParentNodeId="ns=1;i=16644" DataType="UInt32">
+    <DisplayName>StateNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16644</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16646" BrowseName="HaltedToReady" ParentNodeId="ns=1;i=16611">
+    <DisplayName>HaltedToReady</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16647</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16647" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16646" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16646</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16648" BrowseName="Ready" ParentNodeId="ns=1;i=16611">
+    <DisplayName>Ready</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16649</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16649" BrowseName="StateNumber" ParentNodeId="ns=1;i=16648" DataType="UInt32">
+    <DisplayName>StateNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16648</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16650" BrowseName="ReadyToHalted" ParentNodeId="ns=1;i=16611">
+    <DisplayName>ReadyToHalted</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16651</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16651" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16650" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16650</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16652" BrowseName="ReadyToRunning" ParentNodeId="ns=1;i=16611">
+    <DisplayName>ReadyToRunning</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16653</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16653" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16652" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16652</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16654" BrowseName="Running" ParentNodeId="ns=1;i=16611">
+    <DisplayName>Running</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16655</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16655" BrowseName="StateNumber" ParentNodeId="ns=1;i=16654" DataType="UInt32">
+    <DisplayName>StateNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16654</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16656" BrowseName="RunningToHalted" ParentNodeId="ns=1;i=16611">
+    <DisplayName>RunningToHalted</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16657</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16657" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16656" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16656</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16658" BrowseName="RunningToReady" ParentNodeId="ns=1;i=16611">
+    <DisplayName>RunningToReady</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16659</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16659" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16658" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16658</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16660" BrowseName="RunningToSuspended" ParentNodeId="ns=1;i=16611">
+    <DisplayName>RunningToSuspended</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16661</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16661" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16660" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16660</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16662" BrowseName="Suspended" ParentNodeId="ns=1;i=16611">
+    <DisplayName>Suspended</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16663</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16663" BrowseName="StateNumber" ParentNodeId="ns=1;i=16662" DataType="UInt32">
+    <DisplayName>StateNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16662</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16664" BrowseName="SuspendedToHalted" ParentNodeId="ns=1;i=16611">
+    <DisplayName>SuspendedToHalted</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16665</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16665" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16664" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16664</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16666" BrowseName="SuspendedToReady" ParentNodeId="ns=1;i=16611">
+    <DisplayName>SuspendedToReady</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16667</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16667" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16666" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16666</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16668" BrowseName="SuspendedToRunning" ParentNodeId="ns=1;i=16611">
+    <DisplayName>SuspendedToRunning</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16669</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16669" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16668" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16668</Reference>
+    </References>
+  </UAVariable>
+  <UAMethod NodeId="ns=1;i=16670" BrowseName="Halt" ParentNodeId="ns=1;i=16611" MethodDeclarationId="ns=5;i=15098">
+    <DisplayName>Halt</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=16671" BrowseName="Reset" ParentNodeId="ns=1;i=16611" MethodDeclarationId="ns=5;i=15099">
+    <DisplayName>Reset</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=16672" BrowseName="Resume" ParentNodeId="ns=1;i=16611" MethodDeclarationId="ns=5;i=15097">
+    <DisplayName>Resume</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=16673" BrowseName="Suspend" ParentNodeId="ns=1;i=16611" MethodDeclarationId="ns=5;i=15096">
+    <DisplayName>Suspend</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=16674" BrowseName="Start" ParentNodeId="ns=1;i=16611" MethodDeclarationId="ns=5;i=15095">
+    <DisplayName>Start</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAMethod>
+  <UAObject NodeId="ns=1;i=16675" BrowseName="2:ParameterSet" ParentNodeId="ns=1;i=16611">
+    <DisplayName>ParameterSet</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16676</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16677</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16683</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16611</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16676" BrowseName="4:ToolFrame" ParentNodeId="ns=1;i=16675" DataType="String" AccessLevel="3">
+    <DisplayName>ToolFrame</DisplayName>
+    <Description>The name of the tool frame to be used for the motion</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16675</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16677" BrowseName="4:MaxAcceleration" ParentNodeId="ns=1;i=16675" DataType="Double" ValueRank="1" ArrayDimensions="6" AccessLevel="3">
+    <DisplayName>MaxAcceleration</DisplayName>
+    <Description>Maximum acceleration of the robot should move. First three parameters are for x,y,z in m/s^2. The next three for orientation in rad/s^2</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16681</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2368</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16675</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16681" BrowseName="EURange" ParentNodeId="ns=1;i=16677" DataType="i=884">
+    <DisplayName>EURange</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16677</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16683" BrowseName="4:MaxVelocity" ParentNodeId="ns=1;i=16675" DataType="Double" ValueRank="1" ArrayDimensions="6" AccessLevel="3">
+    <DisplayName>MaxVelocity</DisplayName>
+    <Description>Maximum velocity of the robot should move. First three parameters are for x,y,z in m/s. The next three for orientation in rad/s</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16687</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2368</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16675</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16687" BrowseName="EURange" ParentNodeId="ns=1;i=16683" DataType="i=884">
+    <DisplayName>EURange</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16683</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16689" BrowseName="1:JointPtpMoveSkill" ParentNodeId="ns=1;i=16610">
+    <DisplayName>JointPtpMoveSkill</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16690</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16695</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16703</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16704</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16705</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16720</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16721</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16722</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16724</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16726</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16728</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16730</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16732</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16734</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16736</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16738</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16740</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16742</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16744</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16746</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16748</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16749</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16750</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16751</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16752</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16753</Reference>
+      <Reference ReferenceType="i=17603">ns=4;i=15287</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=4;i=15538</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16610</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16690" BrowseName="CurrentState" ParentNodeId="ns=1;i=16689" DataType="LocalizedText">
+    <DisplayName>CurrentState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16691</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16693</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2760</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16691" BrowseName="Id" ParentNodeId="ns=1;i=16690" DataType="NodeId">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16690</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16693" BrowseName="Number" ParentNodeId="ns=1;i=16690" DataType="UInt32">
+    <DisplayName>Number</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16690</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16695" BrowseName="LastTransition" ParentNodeId="ns=1;i=16689" DataType="LocalizedText">
+    <DisplayName>LastTransition</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16696</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16698</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16699</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2767</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16696" BrowseName="Id" ParentNodeId="ns=1;i=16695" DataType="NodeId">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16695</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16698" BrowseName="Number" ParentNodeId="ns=1;i=16695" DataType="UInt32">
+    <DisplayName>Number</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16695</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16699" BrowseName="TransitionTime" ParentNodeId="ns=1;i=16695" DataType="i=294">
+    <DisplayName>TransitionTime</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16695</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16703" BrowseName="Deletable" ParentNodeId="ns=1;i=16689" DataType="Boolean">
+    <DisplayName>Deletable</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16704" BrowseName="AutoDelete" ParentNodeId="ns=1;i=16689" DataType="Boolean">
+    <DisplayName>AutoDelete</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16705" BrowseName="RecycleCount" ParentNodeId="ns=1;i=16689" DataType="Int32">
+    <DisplayName>RecycleCount</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16720" BrowseName="5:Name" ParentNodeId="ns=1;i=16689" DataType="String">
+    <DisplayName>Name</DisplayName>
+    <Description>Name of the skill</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16721" BrowseName="MaxInstanceCount" ParentNodeId="ns=1;i=16689" DataType="UInt32">
+    <DisplayName>MaxInstanceCount</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16722" BrowseName="Halted" ParentNodeId="ns=1;i=16689">
+    <DisplayName>Halted</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16723</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16723" BrowseName="StateNumber" ParentNodeId="ns=1;i=16722" DataType="UInt32">
+    <DisplayName>StateNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16722</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16724" BrowseName="HaltedToReady" ParentNodeId="ns=1;i=16689">
+    <DisplayName>HaltedToReady</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16725</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16725" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16724" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16724</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16726" BrowseName="Ready" ParentNodeId="ns=1;i=16689">
+    <DisplayName>Ready</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16727</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16727" BrowseName="StateNumber" ParentNodeId="ns=1;i=16726" DataType="UInt32">
+    <DisplayName>StateNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16726</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16728" BrowseName="ReadyToHalted" ParentNodeId="ns=1;i=16689">
+    <DisplayName>ReadyToHalted</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16729</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16729" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16728" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16728</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16730" BrowseName="ReadyToRunning" ParentNodeId="ns=1;i=16689">
+    <DisplayName>ReadyToRunning</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16731</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16731" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16730" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16730</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16732" BrowseName="Running" ParentNodeId="ns=1;i=16689">
+    <DisplayName>Running</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16733</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16733" BrowseName="StateNumber" ParentNodeId="ns=1;i=16732" DataType="UInt32">
+    <DisplayName>StateNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16732</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16734" BrowseName="RunningToHalted" ParentNodeId="ns=1;i=16689">
+    <DisplayName>RunningToHalted</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16735</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16735" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16734" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16734</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16736" BrowseName="RunningToReady" ParentNodeId="ns=1;i=16689">
+    <DisplayName>RunningToReady</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16737</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16737" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16736" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16736</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16738" BrowseName="RunningToSuspended" ParentNodeId="ns=1;i=16689">
+    <DisplayName>RunningToSuspended</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16739</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16739" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16738" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16738</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16740" BrowseName="Suspended" ParentNodeId="ns=1;i=16689">
+    <DisplayName>Suspended</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16741</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16741" BrowseName="StateNumber" ParentNodeId="ns=1;i=16740" DataType="UInt32">
+    <DisplayName>StateNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16740</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16742" BrowseName="SuspendedToHalted" ParentNodeId="ns=1;i=16689">
+    <DisplayName>SuspendedToHalted</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16743</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16743" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16742" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16742</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16744" BrowseName="SuspendedToReady" ParentNodeId="ns=1;i=16689">
+    <DisplayName>SuspendedToReady</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16745</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16745" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16744" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16744</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16746" BrowseName="SuspendedToRunning" ParentNodeId="ns=1;i=16689">
+    <DisplayName>SuspendedToRunning</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16747</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16747" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16746" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16746</Reference>
+    </References>
+  </UAVariable>
+  <UAMethod NodeId="ns=1;i=16748" BrowseName="Halt" ParentNodeId="ns=1;i=16689" MethodDeclarationId="ns=5;i=15098">
+    <DisplayName>Halt</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=16749" BrowseName="Reset" ParentNodeId="ns=1;i=16689" MethodDeclarationId="ns=5;i=15099">
+    <DisplayName>Reset</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=16750" BrowseName="Resume" ParentNodeId="ns=1;i=16689" MethodDeclarationId="ns=5;i=15097">
+    <DisplayName>Resume</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=16751" BrowseName="Suspend" ParentNodeId="ns=1;i=16689" MethodDeclarationId="ns=5;i=15096">
+    <DisplayName>Suspend</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=16752" BrowseName="Start" ParentNodeId="ns=1;i=16689" MethodDeclarationId="ns=5;i=15095">
+    <DisplayName>Start</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAMethod>
+  <UAObject NodeId="ns=1;i=16753" BrowseName="2:ParameterSet" ParentNodeId="ns=1;i=16689">
+    <DisplayName>ParameterSet</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16754</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16755</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16761</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16689</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16754" BrowseName="4:ToolFrame" ParentNodeId="ns=1;i=16753" DataType="String" AccessLevel="3">
+    <DisplayName>ToolFrame</DisplayName>
+    <Description>The name of the tool frame to be used for the motion</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16755" BrowseName="4:MaxAcceleration" ParentNodeId="ns=1;i=16753" DataType="Double" ValueRank="1" ArrayDimensions="0" AccessLevel="3">
+    <DisplayName>MaxAcceleration</DisplayName>
+    <Description>Maximum acceleration the robot should move in rad/s^2 for every axis</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16759</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2368</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16759" BrowseName="EURange" ParentNodeId="ns=1;i=16755" DataType="i=884">
+    <DisplayName>EURange</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16755</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16761" BrowseName="4:MaxVelocity" ParentNodeId="ns=1;i=16753" DataType="Double" ValueRank="1" ArrayDimensions="0" AccessLevel="3">
+    <DisplayName>MaxVelocity</DisplayName>
+    <Description>Maximum velocity the robot should move in rad/s for every axis</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16765</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2368</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16753</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16765" BrowseName="EURange" ParentNodeId="ns=1;i=16761" DataType="i=884">
+    <DisplayName>EURange</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16761</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16767" BrowseName="1:CartesianLinearMoveSkill" ParentNodeId="ns=1;i=16610">
+    <DisplayName>CartesianLinearMoveSkill</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16768</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16773</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16781</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16782</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16783</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16798</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16799</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16800</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16802</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16804</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16806</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16808</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16810</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16812</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16814</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16816</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16818</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16820</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16822</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16824</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16826</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16827</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16828</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16829</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16830</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16831</Reference>
+      <Reference ReferenceType="i=17603">ns=4;i=15265</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=4;i=15295</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16610</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16768" BrowseName="CurrentState" ParentNodeId="ns=1;i=16767" DataType="LocalizedText">
+    <DisplayName>CurrentState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16769</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16771</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2760</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16769" BrowseName="Id" ParentNodeId="ns=1;i=16768" DataType="NodeId">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16768</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16771" BrowseName="Number" ParentNodeId="ns=1;i=16768" DataType="UInt32">
+    <DisplayName>Number</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16768</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16773" BrowseName="LastTransition" ParentNodeId="ns=1;i=16767" DataType="LocalizedText">
+    <DisplayName>LastTransition</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16774</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16776</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16777</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2767</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16774" BrowseName="Id" ParentNodeId="ns=1;i=16773" DataType="NodeId">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16773</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16776" BrowseName="Number" ParentNodeId="ns=1;i=16773" DataType="UInt32">
+    <DisplayName>Number</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16773</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16777" BrowseName="TransitionTime" ParentNodeId="ns=1;i=16773" DataType="i=294">
+    <DisplayName>TransitionTime</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16773</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16781" BrowseName="Deletable" ParentNodeId="ns=1;i=16767" DataType="Boolean">
+    <DisplayName>Deletable</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16782" BrowseName="AutoDelete" ParentNodeId="ns=1;i=16767" DataType="Boolean">
+    <DisplayName>AutoDelete</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16783" BrowseName="RecycleCount" ParentNodeId="ns=1;i=16767" DataType="Int32">
+    <DisplayName>RecycleCount</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16798" BrowseName="5:Name" ParentNodeId="ns=1;i=16767" DataType="String">
+    <DisplayName>Name</DisplayName>
+    <Description>Name of the skill</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16799" BrowseName="MaxInstanceCount" ParentNodeId="ns=1;i=16767" DataType="UInt32">
+    <DisplayName>MaxInstanceCount</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16800" BrowseName="Halted" ParentNodeId="ns=1;i=16767">
+    <DisplayName>Halted</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16801</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16801" BrowseName="StateNumber" ParentNodeId="ns=1;i=16800" DataType="UInt32">
+    <DisplayName>StateNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16800</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16802" BrowseName="HaltedToReady" ParentNodeId="ns=1;i=16767">
+    <DisplayName>HaltedToReady</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16803</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16803" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16802" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16802</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16804" BrowseName="Ready" ParentNodeId="ns=1;i=16767">
+    <DisplayName>Ready</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16805</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16805" BrowseName="StateNumber" ParentNodeId="ns=1;i=16804" DataType="UInt32">
+    <DisplayName>StateNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16804</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16806" BrowseName="ReadyToHalted" ParentNodeId="ns=1;i=16767">
+    <DisplayName>ReadyToHalted</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16807</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16807" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16806" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16806</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16808" BrowseName="ReadyToRunning" ParentNodeId="ns=1;i=16767">
+    <DisplayName>ReadyToRunning</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16809</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16809" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16808" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16808</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16810" BrowseName="Running" ParentNodeId="ns=1;i=16767">
+    <DisplayName>Running</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16811</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16811" BrowseName="StateNumber" ParentNodeId="ns=1;i=16810" DataType="UInt32">
+    <DisplayName>StateNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16810</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16812" BrowseName="RunningToHalted" ParentNodeId="ns=1;i=16767">
+    <DisplayName>RunningToHalted</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16813</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16813" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16812" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16812</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16814" BrowseName="RunningToReady" ParentNodeId="ns=1;i=16767">
+    <DisplayName>RunningToReady</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16815</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16815" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16814" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16814</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16816" BrowseName="RunningToSuspended" ParentNodeId="ns=1;i=16767">
+    <DisplayName>RunningToSuspended</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16817</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16817" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16816" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16816</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16818" BrowseName="Suspended" ParentNodeId="ns=1;i=16767">
+    <DisplayName>Suspended</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16819</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16819" BrowseName="StateNumber" ParentNodeId="ns=1;i=16818" DataType="UInt32">
+    <DisplayName>StateNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16818</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16820" BrowseName="SuspendedToHalted" ParentNodeId="ns=1;i=16767">
+    <DisplayName>SuspendedToHalted</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16821</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16821" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16820" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16820</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16822" BrowseName="SuspendedToReady" ParentNodeId="ns=1;i=16767">
+    <DisplayName>SuspendedToReady</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16823</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16823" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16822" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16822</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16824" BrowseName="SuspendedToRunning" ParentNodeId="ns=1;i=16767">
+    <DisplayName>SuspendedToRunning</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16825</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16825" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16824" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16824</Reference>
+    </References>
+  </UAVariable>
+  <UAMethod NodeId="ns=1;i=16826" BrowseName="Halt" ParentNodeId="ns=1;i=16767" MethodDeclarationId="ns=5;i=15098">
+    <DisplayName>Halt</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=16827" BrowseName="Reset" ParentNodeId="ns=1;i=16767" MethodDeclarationId="ns=5;i=15099">
+    <DisplayName>Reset</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=16828" BrowseName="Resume" ParentNodeId="ns=1;i=16767" MethodDeclarationId="ns=5;i=15097">
+    <DisplayName>Resume</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=16829" BrowseName="Suspend" ParentNodeId="ns=1;i=16767" MethodDeclarationId="ns=5;i=15096">
+    <DisplayName>Suspend</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=16830" BrowseName="Start" ParentNodeId="ns=1;i=16767" MethodDeclarationId="ns=5;i=15095">
+    <DisplayName>Start</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAMethod>
+  <UAObject NodeId="ns=1;i=16831" BrowseName="2:ParameterSet" ParentNodeId="ns=1;i=16767">
+    <DisplayName>ParameterSet</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16832</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16833</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16839</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16923</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16767</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16832" BrowseName="4:ToolFrame" ParentNodeId="ns=1;i=16831" DataType="String" AccessLevel="3">
+    <DisplayName>ToolFrame</DisplayName>
+    <Description>The name of the tool frame to be used for the motion</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16831</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16833" BrowseName="4:MaxAcceleration" ParentNodeId="ns=1;i=16831" DataType="Double" ValueRank="1" ArrayDimensions="6" AccessLevel="3">
+    <DisplayName>MaxAcceleration</DisplayName>
+    <Description>Maximum acceleration of the robot should move. First three parameters are for x,y,z in m/s^2. The next three for orientation in rad/s^2</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16837</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2368</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16831</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16837" BrowseName="EURange" ParentNodeId="ns=1;i=16833" DataType="i=884">
+    <DisplayName>EURange</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16833</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16839" BrowseName="4:MaxVelocity" ParentNodeId="ns=1;i=16831" DataType="Double" ValueRank="1" ArrayDimensions="6" AccessLevel="3">
+    <DisplayName>MaxVelocity</DisplayName>
+    <Description>Maximum velocity of the robot should move. First three parameters are for x,y,z in m/s. The next three for orientation in rad/s</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16843</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2368</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16831</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16843" BrowseName="EURange" ParentNodeId="ns=1;i=16839" DataType="i=884">
+    <DisplayName>EURange</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16839</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16923" BrowseName="4:AxisBounds" ParentNodeId="ns=1;i=16831" DataType="i=884" ValueRank="1" ArrayDimensions="0" AccessLevel="3">
+    <DisplayName>AxisBounds</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16831</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16845" BrowseName="1:CartesianPtpMoveSkill" ParentNodeId="ns=1;i=16610">
+    <DisplayName>CartesianPtpMoveSkill</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16846</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16851</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16859</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16860</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16861</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16876</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16877</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16878</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16880</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16882</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16884</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16886</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16888</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16890</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16892</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16894</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16896</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16898</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16900</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16902</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16904</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16905</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16906</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16907</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16908</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16909</Reference>
+      <Reference ReferenceType="i=17603">ns=4;i=15265</Reference>
+      <Reference ReferenceType="HasTypeDefinition">ns=4;i=15457</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16610</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16846" BrowseName="CurrentState" ParentNodeId="ns=1;i=16845" DataType="LocalizedText">
+    <DisplayName>CurrentState</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16847</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16849</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2760</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16847" BrowseName="Id" ParentNodeId="ns=1;i=16846" DataType="NodeId">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16846</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16849" BrowseName="Number" ParentNodeId="ns=1;i=16846" DataType="UInt32">
+    <DisplayName>Number</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16846</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16851" BrowseName="LastTransition" ParentNodeId="ns=1;i=16845" DataType="LocalizedText">
+    <DisplayName>LastTransition</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16852</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16854</Reference>
+      <Reference ReferenceType="HasProperty">ns=1;i=16855</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2767</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16852" BrowseName="Id" ParentNodeId="ns=1;i=16851" DataType="NodeId">
+    <DisplayName>Id</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16851</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16854" BrowseName="Number" ParentNodeId="ns=1;i=16851" DataType="UInt32">
+    <DisplayName>Number</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16851</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16855" BrowseName="TransitionTime" ParentNodeId="ns=1;i=16851" DataType="i=294">
+    <DisplayName>TransitionTime</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16851</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16859" BrowseName="Deletable" ParentNodeId="ns=1;i=16845" DataType="Boolean">
+    <DisplayName>Deletable</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16860" BrowseName="AutoDelete" ParentNodeId="ns=1;i=16845" DataType="Boolean">
+    <DisplayName>AutoDelete</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16861" BrowseName="RecycleCount" ParentNodeId="ns=1;i=16845" DataType="Int32">
+    <DisplayName>RecycleCount</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16876" BrowseName="5:Name" ParentNodeId="ns=1;i=16845" DataType="String">
+    <DisplayName>Name</DisplayName>
+    <Description>Name of the skill</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16877" BrowseName="MaxInstanceCount" ParentNodeId="ns=1;i=16845" DataType="UInt32">
+    <DisplayName>MaxInstanceCount</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16878" BrowseName="Halted" ParentNodeId="ns=1;i=16845">
+    <DisplayName>Halted</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16879</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16879" BrowseName="StateNumber" ParentNodeId="ns=1;i=16878" DataType="UInt32">
+    <DisplayName>StateNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16878</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16880" BrowseName="HaltedToReady" ParentNodeId="ns=1;i=16845">
+    <DisplayName>HaltedToReady</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16881</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16881" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16880" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16880</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16882" BrowseName="Ready" ParentNodeId="ns=1;i=16845">
+    <DisplayName>Ready</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16883</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16883" BrowseName="StateNumber" ParentNodeId="ns=1;i=16882" DataType="UInt32">
+    <DisplayName>StateNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16882</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16884" BrowseName="ReadyToHalted" ParentNodeId="ns=1;i=16845">
+    <DisplayName>ReadyToHalted</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16885</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16885" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16884" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16884</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16886" BrowseName="ReadyToRunning" ParentNodeId="ns=1;i=16845">
+    <DisplayName>ReadyToRunning</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16887</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16887" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16886" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16886</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16888" BrowseName="Running" ParentNodeId="ns=1;i=16845">
+    <DisplayName>Running</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16889</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16889" BrowseName="StateNumber" ParentNodeId="ns=1;i=16888" DataType="UInt32">
+    <DisplayName>StateNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16888</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16890" BrowseName="RunningToHalted" ParentNodeId="ns=1;i=16845">
+    <DisplayName>RunningToHalted</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16891</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16891" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16890" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16890</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16892" BrowseName="RunningToReady" ParentNodeId="ns=1;i=16845">
+    <DisplayName>RunningToReady</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16893</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16893" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16892" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16892</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16894" BrowseName="RunningToSuspended" ParentNodeId="ns=1;i=16845">
+    <DisplayName>RunningToSuspended</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16895</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16895" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16894" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16894</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16896" BrowseName="Suspended" ParentNodeId="ns=1;i=16845">
+    <DisplayName>Suspended</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16897</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2307</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16897" BrowseName="StateNumber" ParentNodeId="ns=1;i=16896" DataType="UInt32">
+    <DisplayName>StateNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16896</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16898" BrowseName="SuspendedToHalted" ParentNodeId="ns=1;i=16845">
+    <DisplayName>SuspendedToHalted</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16899</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16899" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16898" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16898</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16900" BrowseName="SuspendedToReady" ParentNodeId="ns=1;i=16845">
+    <DisplayName>SuspendedToReady</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16901</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16901" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16900" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16900</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=16902" BrowseName="SuspendedToRunning" ParentNodeId="ns=1;i=16845">
+    <DisplayName>SuspendedToRunning</DisplayName>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16903</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2310</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16903" BrowseName="TransitionNumber" ParentNodeId="ns=1;i=16902" DataType="UInt32">
+    <DisplayName>TransitionNumber</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16902</Reference>
+    </References>
+  </UAVariable>
+  <UAMethod NodeId="ns=1;i=16904" BrowseName="Halt" ParentNodeId="ns=1;i=16845" MethodDeclarationId="ns=5;i=15098">
+    <DisplayName>Halt</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=16905" BrowseName="Reset" ParentNodeId="ns=1;i=16845" MethodDeclarationId="ns=5;i=15099">
+    <DisplayName>Reset</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=16906" BrowseName="Resume" ParentNodeId="ns=1;i=16845" MethodDeclarationId="ns=5;i=15097">
+    <DisplayName>Resume</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=16907" BrowseName="Suspend" ParentNodeId="ns=1;i=16845" MethodDeclarationId="ns=5;i=15096">
+    <DisplayName>Suspend</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAMethod>
+  <UAMethod NodeId="ns=1;i=16908" BrowseName="Start" ParentNodeId="ns=1;i=16845" MethodDeclarationId="ns=5;i=15095">
+    <DisplayName>Start</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAMethod>
+  <UAObject NodeId="ns=1;i=16909" BrowseName="2:ParameterSet" ParentNodeId="ns=1;i=16845">
+    <DisplayName>ParameterSet</DisplayName>
+    <References>
+      <Reference ReferenceType="HasComponent">ns=1;i=16910</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16911</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16917</Reference>
+      <Reference ReferenceType="HasComponent">ns=1;i=16924</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=58</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16845</Reference>
+    </References>
+  </UAObject>
+  <UAVariable NodeId="ns=1;i=16910" BrowseName="4:ToolFrame" ParentNodeId="ns=1;i=16909" DataType="String" AccessLevel="3">
+    <DisplayName>ToolFrame</DisplayName>
+    <Description>The name of the tool frame to be used for the motion</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16909</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16911" BrowseName="4:MaxAcceleration" ParentNodeId="ns=1;i=16909" DataType="Double" ValueRank="1" ArrayDimensions="0" AccessLevel="3">
+    <DisplayName>MaxAcceleration</DisplayName>
+    <Description>Maximum acceleration the robot should move in rad/s^2 for every axis</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16915</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2368</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16909</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16915" BrowseName="EURange" ParentNodeId="ns=1;i=16911" DataType="i=884">
+    <DisplayName>EURange</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16911</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16917" BrowseName="4:MaxVelocity" ParentNodeId="ns=1;i=16909" DataType="Double" ValueRank="1" ArrayDimensions="0" AccessLevel="3">
+    <DisplayName>MaxVelocity</DisplayName>
+    <Description>Maximum velocity the robot should move in rad/s for every axis</Description>
+    <References>
+      <Reference ReferenceType="HasProperty">ns=1;i=16921</Reference>
+      <Reference ReferenceType="HasTypeDefinition">i=2368</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16909</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16921" BrowseName="EURange" ParentNodeId="ns=1;i=16917" DataType="i=884">
+    <DisplayName>EURange</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=68</Reference>
+      <Reference ReferenceType="HasProperty" IsForward="false">ns=1;i=16917</Reference>
+    </References>
+  </UAVariable>
+  <UAVariable NodeId="ns=1;i=16924" BrowseName="4:AxisBounds" ParentNodeId="ns=1;i=16909" DataType="i=884" ValueRank="1" ArrayDimensions="0" AccessLevel="3">
+    <DisplayName>AxisBounds</DisplayName>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=16909</Reference>
+    </References>
+  </UAVariable>
+  <UAObject NodeId="ns=1;i=15440" BrowseName="3:SafetyStates" ParentNodeId="ns=1;i=15001">
+    <DisplayName>SafetyStates</DisplayName>
+    <Description>Contains safety-related data from motion device system.</Description>
+    <References>
+      <Reference ReferenceType="HasTypeDefinition">i=61</Reference>
+      <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=15001</Reference>
+    </References>
+  </UAObject>
+</UANodeSet>

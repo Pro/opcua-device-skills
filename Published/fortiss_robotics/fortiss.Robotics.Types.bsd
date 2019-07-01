@@ -1,0 +1,17 @@
+<opc:TypeDictionary
+  xmlns:fortiss_DI="https://fortiss.org/UA/DI/"
+  xmlns:DI="http://opcfoundation.org/UA/DI/"
+  xmlns:Robotics="http://opcfoundation.org/UA/Robotics/"
+  xmlns:opc="http://opcfoundation.org/BinarySchema/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:ua="http://opcfoundation.org/UA/"
+  xmlns:tns="https://fortiss.org/UA/Robotics/"
+  DefaultByteOrder="LittleEndian"
+  TargetNamespace="https://fortiss.org/UA/Robotics/"
+>
+  <opc:Import Namespace="https://fortiss.org/UA/DI/" Location="fortiss.Di.BinarySchema.bsd"/>
+  <opc:Import Namespace="http://opcfoundation.org/UA/" Location="Opc.Ua.BinarySchema.bsd"/>
+  <opc:Import Namespace="http://opcfoundation.org/UA/DI/" Location="Opc.Ua.Di.BinarySchema.bsd"/>
+  <opc:Import Namespace="http://opcfoundation.org/UA/Robotics/" Location="Opc.Ua.Robotics.BinarySchema.bsd"/>
+
+</opc:TypeDictionary>

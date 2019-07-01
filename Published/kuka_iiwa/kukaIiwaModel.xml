@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ModelDesign
+  xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:OpcUa="http://opcfoundation.org/UA/"
+  xmlns:DI="http://opcfoundation.org/UA/DI/"
+  xmlns:ROB="http://opcfoundation.org/UA/Robotics/"
+  xmlns:FOR_DI="https://fortiss.org/UA/DI/"
+  xmlns:FOR_ROB="https://fortiss.org/UA/Robotics/"
+  xmlns:IIWA="https://fortiss.org/UA/kuka_iiwa/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  TargetNamespace="https://fortiss.org/UA/kuka_iiwa/"
+  TargetXmlNamespace="https://fortiss.org/UA/kuka_iiwa/"
+  TargetVersion="0.9.0"
+  TargetPublicationDate="2018-06-24T00:00:00Z"
+  xmlns="http://opcfoundation.org/UA/ModelDesign.xsd">
+
+  <Namespaces>
+    <Namespace Name="KukaIiwa" Prefix="Kuka.iiwa" XmlNamespace="https://fortiss.org/UA/kuka_iiwa/Types.xsd" XmlPrefix="kuka_iiwa">https://fortiss.org/UA/kuka_iiwa/</Namespace>
+
+    <Namespace Name="OpcUaRobotics" Prefix="Opc.Ua.Robotics"
+               XmlNamespace="http://opcfoundation.org/UA/Robotics/Types.xsd" XmlPrefix="Robotics"
+               FilePath="../opcua_robotics/OpcUaRoboticsModel">http://opcfoundation.org/UA/Robotics/</Namespace>
+    <Namespace Name="fortissRobotics" Prefix="fortiss.Robotics" XmlNamespace="https://fortiss.org/UA/Robotics/Types.xsd"
+               XmlPrefix="fortiss_Robotics"
+               FilePath="../fortiss_robotics/fortissRoboticsModel">https://fortiss.org/UA/Robotics/</Namespace>
+    <Namespace Name="OpcUa" Version="1.03" PublicationDate="2013-12-02T00:00:00Z" Prefix="Opc.Ua"
+               InternalPrefix="Opc.Ua.Server" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd"
+               XmlPrefix="OpcUa">http://opcfoundation.org/UA/</Namespace>
+    <Namespace Name="OpcUaDi" Prefix="Opc.Ua.Di" XmlNamespace="http://opcfoundation.org/UA/DI/Types.xsd"
+               XmlPrefix="DI" FilePath="OpcUaDiModel">http://opcfoundation.org/UA/DI/</Namespace>
+    <Namespace Name="fortissDi" Prefix="fortiss.Di" XmlNamespace="https://fortiss.org/UA/DI/Types.xsd"
+               XmlPrefix="fortiss_DI" FilePath="../fortiss_di/fortissDiModel">https://fortiss.org/UA/DI/</Namespace>
+  </Namespaces>
+
+  <!-- ### Reference Types ###-->
+
+
+  <!-- ### Object Types ###-->
+
+  <!-- Iiwa Motion Device System -->
+  <Object SymbolicName="IIWA:IiwaMotionSystem" TypeDefinition="ROB:MotionDeviceSystemType">
+    <Description>The Iiwa Robot</Description>
+    <References>
+      <Reference IsInverse="true">
+        <ReferenceType>OpcUa:Organizes</ReferenceType>
+        <TargetId>DI:DeviceSet</TargetId>
+      </Reference>
+    </References>
+    <Children>
+      <Object SymbolicName="ROB:MotionDevices" TypeDefinition="OpcUa:BaseObjectType" ModellingRule="Mandatory">
+        <Children>
+          <Object SymbolicName="IIWA:IiwaRobot" TypeDefinition="FOR_ROB:FortissMotionDeviceType" ModellingRule="Mandatory">
+            <BrowseName>Iiwa Robot</BrowseName>
+            <Children>
+              <Property SymbolicName="DI:Manufacturer" DataType="OpcUa:LocalizedText" ValueRank="Scalar" ModellingRule="Mandatory" >
+                <DefaultValue>
+                    <uax:LocalizedText>
+                      <uax:Locale></uax:Locale>
+                      <uax:Text>KUKA</uax:Text>
+                    </uax:LocalizedText>
+                </DefaultValue>
+              </Property>
+              <Property SymbolicName="DI:Model" DataType="OpcUa:LocalizedText" ValueRank="Scalar" ModellingRule="Mandatory" >
+                <DefaultValue>
+                  <uax:LocalizedText>
+                    <uax:Locale></uax:Locale>
+                    <uax:Text>iiwa</uax:Text>
+                  </uax:LocalizedText>
+                </DefaultValue>
+              </Property>
+              <Property SymbolicName="ROB:MotionDeviceCategory" DataType="ROB:MotionDeviceCategoryEnumeration" ValueRank="Scalar" ModellingRule="Mandatory">
+                <DefaultValue>
+                  <!-- 1 = ARTICULATED_ROBOT -->
+                  <uax:UInt16>1</uax:UInt16>
+                </DefaultValue>
+              </Property>
+              <Object SymbolicName="ROB:Axes" TypeDefinition="OpcUa:BaseObjectType" ModellingRule="Mandatory">
+                <Description>Contains the axis set of the motion device.</Description>
+                <Children>
+                  <Object SymbolicName="ROB:Axis_1" TypeDefinition="ROB:AxisType" ModellingRule="Mandatory">
+                    <Description>The bottom-most axis</Description>
+                    <Children>
+                      <Property SymbolicName="ROB:Name" DataType="OpcUa:String" ValueRank="Scalar" ModellingRule="Optional">
+                        <Description>Joint0</Description>
+                      </Property>
+                      <Property SymbolicName="ROB:MotionProfile" DataType="ROB:AxisMotionProfileEnumeration" ValueRank="Scalar" ModellingRule="Mandatory">
+                        <Description>The kind of axis motion as defined with the AxisMotionProfileEnumeration.</Description>
+                        <DefaultValue>
+                          <!-- 1 = ROTARY -->
+                          <uax:UInt16>1</uax:UInt16>
+                        </DefaultValue>
+                      </Property>
+                      <Object SymbolicName="DI:ParameterSet" ModellingRule="Mandatory">
+                        <Children>
+                          <Variable SymbolicName="ROB:ActualPosition" TypeDefinition="OpcUa:AnalogUnitType" DataType="OpcUa:Double" ModellingRule="Mandatory">
+                            <Description>The axis position inclusive Unit and RangeOfMotion.</Description>
+                          </Variable>
+                          <Variable SymbolicName="ROB:ActualSpeed" TypeDefinition="OpcUa:AnalogUnitType" DataType="OpcUa:Double" ModellingRule="Mandatory">
+                            <Description>The axis speed on load side (after gear/spindle) inclusive Unit.</Description>
+                          </Variable>
+                        </Children>
+                      </Object>
+                    </Children>
+                  </Object>
+                  <Object SymbolicName="ROB:Axis_2" TypeDefinition="ROB:AxisType" ModellingRule="Mandatory">
+                    <Description>The second axis</Description>
+                    <Children>
+                      <Property SymbolicName="ROB:Name" DataType="OpcUa:String" ValueRank="Scalar" ModellingRule="Optional">
+                        <Description>Joint1</Description>
+                      </Property>
+                      <Property SymbolicName="ROB:MotionProfile" DataType="ROB:AxisMotionProfileEnumeration" ValueRank="Scalar" ModellingRule="Mandatory">
+                        <Description>The kind of axis motion as defined with the AxisMotionProfileEnumeration.</Description>
+                        <DefaultValue>
+                          <!-- 1 = ROTARY -->
+                          <uax:UInt16>1</uax:UInt16>
+                        </DefaultValue>
+                      </Property>
+                      <Object SymbolicName="DI:ParameterSet" ModellingRule="Mandatory">
+                        <Children>
+                          <Variable SymbolicName="ROB:ActualPosition" TypeDefinition="OpcUa:AnalogUnitType" DataType="OpcUa:Double" ModellingRule="Mandatory">
+                            <Description>The axis position inclusive Unit and RangeOfMotion.</Description>
+                          </Variable>
+                          <Variable SymbolicName="ROB:ActualSpeed" TypeDefinition="OpcUa:AnalogUnitType" DataType="OpcUa:Double" ModellingRule="Mandatory">
+                            <Description>The axis speed on load side (after gear/spindle) inclusive Unit.</Description>
+                          </Variable>
+                        </Children>
+                      </Object>
+                    </Children>
+                  </Object>
+                  <Object SymbolicName="ROB:Axis_3" TypeDefinition="ROB:AxisType" ModellingRule="Mandatory">
+                    <Description>The third axis</Description>
+                    <Children>
+                      <Property SymbolicName="ROB:Name" DataType="OpcUa:String" ValueRank="Scalar" ModellingRule="Optional">
+                        <Description>Joint2</Description>
+                      </Property>
+                      <Property SymbolicName="ROB:MotionProfile" DataType="ROB:AxisMotionProfileEnumeration" ValueRank="Scalar" ModellingRule="Mandatory">
+                        <Description>The kind of axis motion as defined with the AxisMotionProfileEnumeration.</Description>
+                        <DefaultValue>
+                          <!-- 1 = ROTARY -->
+                          <uax:UInt16>1</uax:UInt16>
+                        </DefaultValue>
+                      </Property>
+                      <Object SymbolicName="DI:ParameterSet" ModellingRule="Mandatory">
+                        <Children>
+                          <Variable SymbolicName="ROB:ActualPosition" TypeDefinition="OpcUa:AnalogUnitType" DataType="OpcUa:Double" ModellingRule="Mandatory">
+                            <Description>The axis position inclusive Unit and RangeOfMotion.</Description>
+                          </Variable>
+                          <Variable SymbolicName="ROB:ActualSpeed" TypeDefinition="OpcUa:AnalogUnitType" DataType="OpcUa:Double" ModellingRule="Mandatory">
+                            <Description>The axis speed on load side (after gear/spindle) inclusive Unit.</Description>
+                          </Variable>
+                        </Children>
+                      </Object>
+                    </Children>
+                  </Object>
+                  <Object SymbolicName="ROB:Axis_4" TypeDefinition="ROB:AxisType" ModellingRule="Mandatory">
+                    <Description>The fourth axis</Description>
+                    <Children>
+                      <Property SymbolicName="ROB:Name" DataType="OpcUa:String" ValueRank="Scalar" ModellingRule="Optional">
+                        <Description>Joint3</Description>
+                      </Property>
+                      <Property SymbolicName="ROB:MotionProfile" DataType="ROB:AxisMotionProfileEnumeration" ValueRank="Scalar" ModellingRule="Mandatory">
+                        <Description>The kind of axis motion as defined with the AxisMotionProfileEnumeration.</Description>
+                        <DefaultValue>
+                          <!-- 1 = ROTARY -->
+                          <uax:UInt16>1</uax:UInt16>
+                        </DefaultValue>
+                      </Property>
+                      <Object SymbolicName="DI:ParameterSet" ModellingRule="Mandatory">
+                        <Children>
+                          <Variable SymbolicName="ROB:ActualPosition" TypeDefinition="OpcUa:AnalogUnitType" DataType="OpcUa:Double" ModellingRule="Mandatory">
+                            <Description>The axis position inclusive Unit and RangeOfMotion.</Description>
+                          </Variable>
+                          <Variable SymbolicName="ROB:ActualSpeed" TypeDefinition="OpcUa:AnalogUnitType" DataType="OpcUa:Double" ModellingRule="Mandatory">
+                            <Description>The axis speed on load side (after gear/spindle) inclusive Unit.</Description>
+                          </Variable>
+                        </Children>
+                      </Object>
+                    </Children>
+                  </Object>
+                  <Object SymbolicName="ROB:Axis_5" TypeDefinition="ROB:AxisType" ModellingRule="Mandatory">
+                    <Description>The fifth axis</Description>
+                    <Children>
+                      <Property SymbolicName="ROB:Name" DataType="OpcUa:String" ValueRank="Scalar" ModellingRule="Optional">
+                        <Description>Joint4</Description>
+                      </Property>
+                      <Property SymbolicName="ROB:MotionProfile" DataType="ROB:AxisMotionProfileEnumeration" ValueRank="Scalar" ModellingRule="Mandatory">
+                        <Description>The kind of axis motion as defined with the AxisMotionProfileEnumeration.</Description>
+                        <DefaultValue>
+                          <!-- 1 = ROTARY -->
+                          <uax:UInt16>1</uax:UInt16>
+                        </DefaultValue>
+                      </Property>
+                      <Object SymbolicName="DI:ParameterSet" ModellingRule="Mandatory">
+                        <Children>
+                          <Variable SymbolicName="ROB:ActualPosition" TypeDefinition="OpcUa:AnalogUnitType" DataType="OpcUa:Double" ModellingRule="Mandatory">
+                            <Description>The axis position inclusive Unit and RangeOfMotion.</Description>
+                          </Variable>
+                          <Variable SymbolicName="ROB:ActualSpeed" TypeDefinition="OpcUa:AnalogUnitType" DataType="OpcUa:Double" ModellingRule="Mandatory">
+                            <Description>The axis speed on load side (after gear/spindle) inclusive Unit.</Description>
+                          </Variable>
+                        </Children>
+                      </Object>
+                    </Children>
+                  </Object>
+                  <Object SymbolicName="ROB:Axis_6" TypeDefinition="ROB:AxisType" ModellingRule="Mandatory">
+                    <Description>The sixth axis</Description>
+                    <Children>
+                      <Property SymbolicName="ROB:Name" DataType="OpcUa:String" ValueRank="Scalar" ModellingRule="Optional">
+                        <Description>Joint5</Description>
+                      </Property>
+                      <Property SymbolicName="ROB:MotionProfile" DataType="ROB:AxisMotionProfileEnumeration" ValueRank="Scalar" ModellingRule="Mandatory">
+                        <Description>The kind of axis motion as defined with the AxisMotionProfileEnumeration.</Description>
+                        <DefaultValue>
+                          <!-- 1 = ROTARY -->
+                          <uax:UInt16>1</uax:UInt16>
+                        </DefaultValue>
+                      </Property>
+                      <Object SymbolicName="DI:ParameterSet" ModellingRule="Mandatory">
+                        <Children>
+                          <Variable SymbolicName="ROB:ActualPosition" TypeDefinition="OpcUa:AnalogUnitType" DataType="OpcUa:Double" ModellingRule="Mandatory">
+                            <Description>The axis position inclusive Unit and RangeOfMotion.</Description>
+                          </Variable>
+                          <Variable SymbolicName="ROB:ActualSpeed" TypeDefinition="OpcUa:AnalogUnitType" DataType="OpcUa:Double" ModellingRule="Mandatory">
+                            <Description>The axis speed on load side (after gear/spindle) inclusive Unit.</Description>
+                          </Variable>
+                        </Children>
+                      </Object>
+                    </Children>
+                  </Object>
+                  <Object SymbolicName="ROB:Axis_7" TypeDefinition="ROB:AxisType" ModellingRule="Mandatory">
+                    <Description>The last axis</Description>
+                    <Children>
+                      <Property SymbolicName="ROB:Name" DataType="OpcUa:String" ValueRank="Scalar" ModellingRule="Optional">
+                        <Description>Joint6</Description>
+                      </Property>
+                      <Property SymbolicName="ROB:MotionProfile" DataType="ROB:AxisMotionProfileEnumeration" ValueRank="Scalar" ModellingRule="Mandatory">
+                        <Description>The kind of axis motion as defined with the AxisMotionProfileEnumeration.</Description>
+                        <DefaultValue>
+                          <!-- 1 = ROTARY -->
+                          <uax:UInt16>1</uax:UInt16>
+                        </DefaultValue>
+                      </Property>
+                      <Object SymbolicName="DI:ParameterSet" ModellingRule="Mandatory">
+                        <Children>
+                          <Variable SymbolicName="ROB:ActualPosition" TypeDefinition="OpcUa:AnalogUnitType" DataType="OpcUa:Double" ModellingRule="Mandatory">
+                            <Description>The axis position inclusive Unit and RangeOfMotion.</Description>
+                          </Variable>
+                          <Variable SymbolicName="ROB:ActualSpeed" TypeDefinition="OpcUa:AnalogUnitType" DataType="OpcUa:Double" ModellingRule="Mandatory">
+                            <Description>The axis speed on load side (after gear/spindle) inclusive Unit.</Description>
+                          </Variable>
+                        </Children>
+                      </Object>
+                    </Children>
+                  </Object>
+                </Children>
+              </Object>
+              <Variable SymbolicName="IIWA:Position" TypeDefinition="OpcUa:ThreeDFrameType" DataType="OpcUa:ThreeDFrame" ModellingRule="Mandatory" ValueRank="Scalar">
+                <Description>The cartesian location of the robot</Description>
+              </Variable>
+              <Object SymbolicName="IIWA:ForceTorqueSensors" TypeDefinition="FOR_DI:ForceTorqueSensorType"/>
+              <Variable SymbolicName="IIWA:Led" TypeDefinition="OpcUa:BaseDataVariableType" DataType="OpcUa:Boolean" ModellingRule="Mandatory" ValueRank="Scalar" AccessLevel="ReadWrite">
+                <Description>Status of the blue LED at the robots TCP</Description>
+              </Variable>
+            </Children>
+          </Object>
+        </Children>
+      </Object>
+      <Object SymbolicName="ROB:Controllers" TypeDefinition="OpcUa:BaseObjectType" ModellingRule="Mandatory">
+        <Children>
+          <Object SymbolicName="IIWA:IiwaController" TypeDefinition="ROB:ControllerType" ModellingRule="Mandatory">
+            <BrowseName>Iiwa Controller</BrowseName>
+            <Children>
+              <Object SymbolicName="FOR_DI:Skills" TypeDefinition="OpcUa:BaseObjectType" ModellingRule="Mandatory">
+                <Children>
+                  <Object SymbolicName="IIWA:JointLinearMoveSkill" TypeDefinition="FOR_ROB:JointLinearMoveSkillType" ModellingRule="Mandatory">
+                  </Object>
+                  <Object SymbolicName="IIWA:JointPtpMoveSkill" TypeDefinition="FOR_ROB:JointPtpMoveSkillType" ModellingRule="Mandatory">
+                  </Object>
+                  <Object SymbolicName="IIWA:CartesianLinearMoveSkill" TypeDefinition="FOR_ROB:CartesianLinearMoveSkillType" ModellingRule="Mandatory">
+                    <Children>
+                      <Object SymbolicName="DI:ParameterSet" ModellingRule="Mandatory">
+                        <Children>
+                          <Variable SymbolicName="FOR_ROB:AxisBounds" TypeDefinition="OpcUa:BaseDataVariableType"
+                                    DataType="OpcUa:Range" ModellingRule="Mandatory" ValueRank="Array"
+                                    AccessLevel="ReadWrite">
+                          </Variable>
+                        </Children>
+                      </Object>
+                    </Children>
+                  </Object>
+                  <Object SymbolicName="IIWA:CartesianPtpMoveSkill" TypeDefinition="FOR_ROB:CartesianPtpMoveSkillType" ModellingRule="Mandatory">
+                    <Children>
+                      <Object SymbolicName="DI:ParameterSet" ModellingRule="Mandatory">
+                        <Children>
+                          <Variable SymbolicName="FOR_ROB:AxisBounds" TypeDefinition="OpcUa:BaseDataVariableType"
+                                    DataType="OpcUa:Range" ModellingRule="Mandatory" ValueRank="Array"
+                                    AccessLevel="ReadWrite">
+                          </Variable>
+                        </Children>
+                      </Object>
+                    </Children>
+                  </Object>
+                </Children>
+              </Object>
+            </Children>
+            <References>
+              <Reference IsInverse="false">
+                <ReferenceType>OpcUa:HasInterface</ReferenceType>
+                <TargetId>FOR_DI:ISkillControllerType</TargetId>
+              </Reference>
+            </References>
+          </Object>
+        </Children>
+      </Object>
+    </Children>
+  </Object>
+
+  <!-- ### Variable Types ###-->
+
+</ModelDesign>
