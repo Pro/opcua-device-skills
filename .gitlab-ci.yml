@@ -13,10 +13,10 @@ build_fortiss_di:
   stage: fortiss-di
   script:
     - docker run \
-	  --mount type=bind,source=$(pwd),target=/model/src \
-	  --entrypoint "/app/PublishModel.sh" \
-	  sailavid/ua-modelcompiler \
-	   /model/src/fortiss_di/fortissDiModel fortiss_di /model/src/Published
+      --mount type=bind,source=$(pwd),target=/model/src \
+      --entrypoint "/app/PublishModel.sh" \
+      sailavid/ua-modelcompiler \
+       /model/src/fortiss_di/fortissDiModel fortiss_di /model/src/Published
   artifacts:
     paths:
     - Published
@@ -25,10 +25,10 @@ build_fortiss_robotics:
   stage: fortiss-robotics
   script:
     - docker run \
-	  --mount type=bind,source=$(pwd),target=/model/src \
-	  --entrypoint "/app/PublishModel.sh" \
-	  sailavid/ua-modelcompiler \
-	   /model/src/fortiss_robotics/fortissRoboticsModel fortiss_robotics /model/src/Published
+      --mount type=bind,source=$(pwd),target=/model/src \
+      --entrypoint "/app/PublishModel.sh" \
+      sailavid/ua-modelcompiler \
+       /model/src/fortiss_robotics/fortissRoboticsModel fortiss_robotics /model/src/Published
   artifacts:
     paths:
     - Published
@@ -37,10 +37,10 @@ build_kuka_iiwa:
   stage: kuka-iiwa
   script:
     - docker run \
-	  --mount type=bind,source=$(pwd),target=/model/src \
-	  --entrypoint "/app/PublishModel.sh" \
-	  sailavid/ua-modelcompiler \
-	   /model/src/kuka_iiwa/kukaIiwaModel kuka_iiwa /model/src/Published
+      --mount type=bind,source=$(pwd),target=/model/src \
+      --entrypoint "/app/PublishModel.sh" \
+      sailavid/ua-modelcompiler \
+       /model/src/kuka_iiwa/kukaIiwaModel kuka_iiwa /model/src/Published
   artifacts:
     paths:
     - Published
