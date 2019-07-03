@@ -1,4 +1,4 @@
-image: docker
+image: docker:git
 
 before_script:
   - git submodule sync --recursive
