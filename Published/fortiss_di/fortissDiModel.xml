@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ModelDesign
+    xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:OpcUa="http://opcfoundation.org/UA/"
+    xmlns:DI="http://opcfoundation.org/UA/DI/"
+    xmlns:FOR_DI="https://fortiss.org/UA/DI/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    TargetNamespace="https://fortiss.org/UA/DI/"
+    TargetXmlNamespace="https://fortiss.org/UA/DI/"
+    TargetVersion="0.9.1"
+    TargetPublicationDate="2018-03-23T00:00:00Z"
+    xmlns="http://opcfoundation.org/UA/ModelDesign.xsd">
+
+  <Namespaces>
+    <Namespace Name="OpcUa" Version="1.03" PublicationDate="2013-12-02T00:00:00Z" Prefix="Opc.Ua" InternalPrefix="Opc.Ua.Server" XmlNamespace="http://opcfoundation.org/UA/2008/02/Types.xsd" XmlPrefix="OpcUa">http://opcfoundation.org/UA/</Namespace>
+    <Namespace Name="OpcUaDi" Prefix="Opc.Ua.Di" XmlNamespace="http://opcfoundation.org/UA/DI/Types.xsd" XmlPrefix="DI" FilePath="OpcUaDiModel">http://opcfoundation.org/UA/DI/</Namespace>
+    <Namespace Name="fortissDi" Prefix="fortiss.Di" XmlNamespace="https://fortiss.org/UA/DI/Types.xsd" XmlPrefix="fortiss_DI">https://fortiss.org/UA/DI/</Namespace>
+  </Namespaces>
+
+
+  <Object SymbolicName="FOR_DI:FortissDiNamespaceMetadata" TypeDefinition="OpcUa:NamespaceMetadataType">
+    <BrowseName>https://fortiss.org/UA/DI/</BrowseName>
+    <Children>
+      <Property SymbolicName="OpcUa:NamespaceUri" DataType="OpcUa:String">
+        <DefaultValue>
+          <uax:String>https://fortiss.org/UA/DI/</uax:String>
+        </DefaultValue>
+      </Property>
+      <Property SymbolicName="OpcUa:NamespaceVersion" DataType="OpcUa:String">
+        <DefaultValue>
+          <uax:String>1.00</uax:String>
+        </DefaultValue>
+      </Property>
+      <Property SymbolicName="OpcUa:NamespacePublicationDate" DataType="OpcUa:DateTime">
+        <DefaultValue>
+          <uax:DateTime>2019-01-01</uax:DateTime>
+        </DefaultValue>
+      </Property>
+      <Property SymbolicName="OpcUa:IsNamespaceSubset" DataType="OpcUa:Boolean">
+        <DefaultValue>
+          <uax:Boolean>false</uax:Boolean>
+        </DefaultValue>
+      </Property>
+      <Property SymbolicName="OpcUa:StaticNodeIdTypes" DataType="OpcUa:IdType" ValueRank="Array">
+        <DefaultValue>
+          <uax:ListOfInt32>
+            <uax:Int32>0</uax:Int32>
+          </uax:ListOfInt32>
+        </DefaultValue>
+      </Property>
+      <Property SymbolicName="OpcUa:StaticNumericNodeIdRange" DataType="OpcUa:NumericRange" ValueRank="Array">
+        <DefaultValue>
+          <uax:ListOfString>
+            <uax:String>1:65535</uax:String>
+          </uax:ListOfString>
+        </DefaultValue>
+      </Property>
+      <Property SymbolicName="OpcUa:StaticStringNodeIdPattern" DataType="OpcUa:String">
+        <DefaultValue>
+          <uax:String></uax:String>
+        </DefaultValue>
+      </Property>
+      <Property SymbolicName="OpcUa:DefaultRolePermissions" ModellingRule="Mandatory" />
+      <Property SymbolicName="OpcUa:DefaultUserRolePermissions" ModellingRule="Mandatory" />
+      <Property SymbolicName="OpcUa:DefaultAccessRestrictions" ModellingRule="Mandatory" />
+    </Children>
+    <References>
+      <Reference IsInverse="true">
+        <ReferenceType>OpcUa:HasComponent</ReferenceType>
+        <TargetId>OpcUa:Server_Namespaces</TargetId>
+      </Reference>
+    </References>
+  </Object>
+
+  <!-- ### Object Types ###-->
+
+  <ObjectType SymbolicName="FOR_DI:SkillType" BaseType="OpcUa:ProgramStateMachineType" IsAbstract="true">
+    <Description>A skill type</Description>
+    <Children>
+      <Property SymbolicName="FOR_DI:Name" DataType="OpcUa:String" ValueRank="Scalar" ModellingRule="Mandatory">
+        <Description>Name of the skill</Description>
+      </Property>
+      <Property SymbolicName="OpcUa:MaxInstanceCount" DataType="OpcUa:UInt32" ValueRank="Scalar" ModellingRule="Mandatory" />
+      <Object SymbolicName="OpcUa:Halted" TypeDefinition="OpcUa:StateType" ModellingRule="Mandatory" />
+      <Object SymbolicName="OpcUa:HaltedToReady" TypeDefinition="OpcUa:TransitionType" ModellingRule="Mandatory" />
+      <Object SymbolicName="OpcUa:Ready" TypeDefinition="OpcUa:StateType" ModellingRule="Mandatory" />
+      <Object SymbolicName="OpcUa:ReadyToHalted" TypeDefinition="OpcUa:TransitionType" ModellingRule="Mandatory" />
+      <Object SymbolicName="OpcUa:ReadyToRunning" TypeDefinition="OpcUa:TransitionType" ModellingRule="Mandatory" />
+      <Object SymbolicName="OpcUa:Running" TypeDefinition="OpcUa:StateType" ModellingRule="Mandatory" />
+      <Object SymbolicName="OpcUa:RunningToHalted" TypeDefinition="OpcUa:TransitionType" ModellingRule="Mandatory" />
+      <Object SymbolicName="OpcUa:RunningToReady" TypeDefinition="OpcUa:TransitionType" ModellingRule="Mandatory" />
+      <Object SymbolicName="OpcUa:RunningToSuspended" TypeDefinition="OpcUa:TransitionType" ModellingRule="Mandatory" />
+      <Object SymbolicName="OpcUa:Suspended" TypeDefinition="OpcUa:StateType" ModellingRule="Mandatory" />
+      <Object SymbolicName="OpcUa:SuspendedToHalted" TypeDefinition="OpcUa:TransitionType" ModellingRule="Mandatory" />
+      <Object SymbolicName="OpcUa:SuspendedToReady" TypeDefinition="OpcUa:TransitionType" ModellingRule="Mandatory" />
+      <Object SymbolicName="OpcUa:SuspendedToRunning" TypeDefinition="OpcUa:TransitionType" ModellingRule="Mandatory" />
+      <Object SymbolicName="OpcUa:FinalResultData" TypeDefinition="OpcUa:BaseObjectType" ModellingRule="Optional" />
+      <Method SymbolicName="OpcUa:Halt" ModellingRule="Mandatory" />
+      <Method SymbolicName="OpcUa:Reset" ModellingRule="Mandatory" />
+      <Method SymbolicName="OpcUa:Resume" ModellingRule="Mandatory" />
+      <Method SymbolicName="OpcUa:Suspend" ModellingRule="Mandatory" />
+      <Method SymbolicName="OpcUa:Start" ModellingRule="Mandatory" />
+    </Children>
+  </ObjectType>
+
+  <ObjectType SymbolicName="FOR_DI:GripperSkillType" BaseType="FOR_DI:SkillType" IsAbstract="true">
+    <Description>A gripper skill type</Description>
+  </ObjectType>
+
+  <ObjectType SymbolicName="FOR_DI:GraspGripperSkillType" BaseType="FOR_DI:GripperSkillType" IsAbstract="false">
+    <BrowseName>GraspGripperSkill</BrowseName>
+    <Description>Close the gripper to its minimum width</Description>
+    <Children>
+      <Object SymbolicName="DI:ParameterSet" ModellingRule="Optional">
+        <Children>
+          <Variable SymbolicName="FOR_DI:Force" TypeDefinition="OpcUa:AnalogItemType" DataType="OpcUa:Double" ModellingRule="Optional" ValueRank="Scalar" AccessLevel="ReadWrite">
+            <Description>The gripper force</Description>
+          </Variable>
+        </Children>
+      </Object>
+    </Children>
+  </ObjectType>
+
+  <ObjectType SymbolicName="FOR_DI:ReleaseGripperSkill" BaseType="FOR_DI:GripperSkillType" IsAbstract="false">
+    <BrowseName>ReleaseGripperSkill</BrowseName>
+    <Description>Open the gripper to its maximum width</Description>
+    <Children>
+      <Object SymbolicName="DI:ParameterSet" ModellingRule="Optional">
+        <Children>
+          <Variable SymbolicName="FOR_DI:Force" TypeDefinition="OpcUa:AnalogItemType" DataType="OpcUa:Double" ModellingRule="Optional" ValueRank="Scalar" AccessLevel="ReadWrite">
+            <Description>The gripper force</Description>
+          </Variable>
+        </Children>
+      </Object>
+    </Children>
+  </ObjectType>
+
+  <ObjectType SymbolicName="FOR_DI:MoveGripperSkill" BaseType="FOR_DI:GripperSkillType" IsAbstract="false">
+    <BrowseName>MoveGripperSkill</BrowseName>
+    <Description>Open/Close the gripper to a specific width</Description>
+    <Children>
+      <Object SymbolicName="DI:ParameterSet" ModellingRule="Mandatory">
+        <Children>
+          <Variable SymbolicName="FOR_DI:Width" TypeDefinition="OpcUa:AnalogItemType" DataType="OpcUa:Double" ModellingRule="Mandatory" ValueRank="Scalar" AccessLevel="ReadWrite">
+            <Description>The gripper width</Description>
+          </Variable>
+          <Variable SymbolicName="FOR_DI:Force" TypeDefinition="OpcUa:AnalogItemType" DataType="OpcUa:Double" ModellingRule="Optional" ValueRank="Scalar" AccessLevel="ReadWrite">
+            <Description>The gripper force</Description>
+          </Variable>
+        </Children>
+      </Object>
+    </Children>
+  </ObjectType>
+
+  <ObjectType SymbolicName="FOR_DI:ISkillControllerType" BaseType="OpcUa:BaseInterfaceType" IsAbstract="true" SupportsEvents="true">
+    <Description>The interface definition for a skill controller type. Represents an object which contains skill instances. </Description>
+    <Children>
+      <Property SymbolicName="FOR_DI:Name" DataType="OpcUa:LocalizedText" ValueRank="Scalar" ModellingRule="Optional" />
+      <Object SymbolicName="FOR_DI:Skills" TypeDefinition="OpcUa:BaseObjectType" ModellingRule="Mandatory">
+        <Description>Contains the skills of the Component</Description>
+        <Children>
+          <Object SymbolicName="FOR_DI:Skill__No_" TypeDefinition="FOR_DI:SkillType" ModellingRule="OptionalPlaceholder">
+            <BrowseName>Skill_&lt;No&gt;</BrowseName>
+          </Object>
+        </Children>
+      </Object>
+    </Children>
+  </ObjectType>
+
+  <ObjectType SymbolicName="FOR_DI:GripperDeviceControllerType" BaseType="DI:ComponentType" IsAbstract="false" SupportsEvents="true">
+    <Description>The GripperDeviceControllerType represents a controller for a gripper device</Description>
+    <Children>
+      <Object SymbolicName="FOR_DI:Skills" TypeDefinition="OpcUa:BaseObjectType" ModellingRule="Mandatory">
+        <Description>Contains the skills of the gripper controller.</Description>
+        <Children>
+          <Object SymbolicName="FOR_DI:MoveGripperSkill" TypeDefinition="FOR_DI:SkillType" ModellingRule="Optional" />
+          <Object SymbolicName="FOR_DI:ReleaseGripperSkill" TypeDefinition="FOR_DI:SkillType" ModellingRule="Mandatory" />
+          <Object SymbolicName="FOR_DI:GraspGripperSkill" TypeDefinition="FOR_DI:SkillType" ModellingRule="Mandatory" />
+        </Children>
+      </Object>
+    </Children>
+    <References>
+      <Reference IsInverse="false">
+        <ReferenceType>OpcUa:HasInterface</ReferenceType>
+        <TargetId>FOR_DI:ISkillControllerType</TargetId>
+      </Reference>
+    </References>
+  </ObjectType>
+
+  <ObjectType SymbolicName="FOR_DI:SensorType" BaseType="DI:ComponentType" IsAbstract="false">
+    <Description>A generic object type for any sensor. A sensor only provides data, but can not be controlled.</Description>
+  </ObjectType>
+
+  <ObjectType SymbolicName="FOR_DI:ForceTorqueSensorType" BaseType="FOR_DI:SensorType" SupportsEvents="true">
+    <Description>The ForceTorqueSensorType represents a controller type for a sensor</Description>
+    <Children>
+      <Object SymbolicName="FOR_DI:ForceSensor" TypeDefinition="FOR_DI:SensorType" ModellingRule="Mandatory">
+        <Description> Offers information about force experienced by the robot</Description>
+        <Children>
+          <Variable SymbolicName="FOR_DI:Force" TypeDefinition="OpcUa:AnalogItemType" DataType="OpcUa:Double" ModellingRule="Mandatory" ValueRank="Array" AccessLevel="ReadWrite">
+            <Description>The current forces in X Y and Z in N</Description>
+          </Variable>
+        </Children>
+      </Object>
+      <Object SymbolicName="FOR_DI:TorqueSensor" TypeDefinition="FOR_DI:SensorType" ModellingRule="Mandatory">
+        <Description> Offers information about torque experienced by the sensor</Description>
+        <Children>
+          <Variable SymbolicName="FOR_DI:Torque" TypeDefinition="OpcUa:AnalogItemType" DataType="OpcUa:Double" ModellingRule="Mandatory" ValueRank="Array" AccessLevel="ReadWrite">
+            <Description>The torque in X Y and Z in Nm</Description>
+          </Variable>
+        </Children>
+      </Object>
+    </Children>
+  </ObjectType>
+
+
+  <ObjectType SymbolicName="FOR_DI:SkillTransitionEventType" BaseType="OpcUa:ProgramTransitionEventType" IsAbstract="false">
+    <Description>An event caused by the skill state transition.</Description>
+  </ObjectType>
+  <!-- ### Variable Types ###-->
+
+  <!-- ### Data Types ###-->
+
+
+</ModelDesign>
